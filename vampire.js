@@ -39,20 +39,25 @@ class Vampire {
     return this.numberOfVampiresFromOriginal < vampire.numberOfVampiresFromOriginal;
   }
 
-  /** Tree traversal methods **/
-
   // Returns the vampire object with that name, or null if no vampire exists with that name
   vampireWithName(name) {
-    
+
   }
 
   // Returns the total number of vampires that exist
   get totalDescendents() {
-    
+    let totalDescendents = 0;
+
+    for (const descendent of this.offspring) {
+      totalDescendents += descendent.totalDescendents;
+    }
+    return totalDescendents;
   }
 
   // Returns an array of all the vampires that were converted after 1980
   get allMillennialVampires() {
+    let post1980 = [];
+
     
   }
 
@@ -63,9 +68,9 @@ class Vampire {
   // For example:
   // * when comparing Ansel and Sarah, Ansel is the closest common anscestor.
   // * when comparing Ansel and Andrew, Ansel is the closest common anscestor.
-  closestCommonAncestor(vampire) {
+  // closestCommonAncestor(vampire) {
 
-  }
+  // }
 }
 
 module.exports = Vampire;
